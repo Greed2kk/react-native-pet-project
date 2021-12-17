@@ -1,13 +1,26 @@
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import { Button, Text, View, StyleSheet } from 'react-native';
 
-const HomeScreen = ({navigation: {navigate}}) => {
+const HomeScreen = ({ route: { params }, navigation: { navigate } }) => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Try editing me! 🎉</Text>
-      <Button title="click" onPress={() => navigate('Home2')} />
+    <View style={styles.view}>
+      <Text>{params ? params.text : 'Go to details, bruh!'}</Text>
+      <Button
+        title="click"
+        onPress={() =>
+          navigate('DetailsScreen', { title: 'button title from props' })
+        }
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
 export default HomeScreen;
