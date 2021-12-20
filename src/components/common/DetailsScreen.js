@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Text, View, StyleSheet, TextInput } from 'react-native';
+import { Button as EButton } from 'react-native-elements';
 
 const HomeScreen = ({
   navigation,
@@ -28,6 +29,22 @@ const HomeScreen = ({
       <Button
         title="Update the title"
         onPress={() => navigation.setOptions({ title: 'Updated!' })}
+      />
+      <EButton
+        title="Add rating"
+        onPress={() => navigation.navigate('RatingScreen')}
+        buttonStyle={{
+          backgroundColor: 'black',
+          borderWidth: 2,
+          borderColor: 'white',
+          borderRadius: 30,
+        }}
+        containerStyle={{
+          width: 200,
+          marginHorizontal: 50,
+          marginVertical: 10,
+        }}
+        titleStyle={{ fontWeight: 'bold' }}
       />
     </View>
   );

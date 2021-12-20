@@ -7,16 +7,25 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean-cache": "sudo watchman watch-del-all && rm -rf ~/.gradle/caches && sudo npm cache clean --force",
+    "clean-node-modules": "rm -rf yarn.lock && rm -rf node_modules && yarn",
+    "clean": "yarn run clean-cache && yarn run clean-node-modules && yarn run clean:ios && yarn run clean:android",
+    "clean:android": "cd android && ./gradlew clean && cd ..",
+    "clean:ios": "cd ios && pod install --repo-update && cd .."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.14",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "react": "17.0.2",
     "react-native": "0.66.4",
+    "react-native-elements": "^3.4.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-safe-area-view": "^1.1.1",
-    "react-native-screens": "^3.10.1"
+    "react-native-screens": "^3.10.1",
+    "react-native-vector-icons": "^9.0.0",
+    "react-native-webview": "^11.15.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

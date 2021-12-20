@@ -5,6 +5,7 @@ import HomeScreen from '../components/common/HomeScreen';
 import DetailsScreen from '../components/common/DetailsScreen';
 import Logo from '../components/common/LogoTitle';
 import { Button } from 'react-native';
+import RatingScreen from '../components/common/RatingScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,7 @@ const MainNavigation = () => {
             ),
           })}
         />
+        <Stack.Screen name="RatingScreen" component={RatingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
