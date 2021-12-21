@@ -21,6 +21,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 ios/AppCenter-Config.plist
+ios/AwesomeProject/Info.plist
 
 # Android/IntelliJ
 #
