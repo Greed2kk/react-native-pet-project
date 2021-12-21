@@ -13,6 +13,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.microsoft.codepush.react.ReactInstanceHolder;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -31,6 +32,11 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new MyReactNativePackage());
           return packages;
         }
+
+         @Override
+         protected String getJSBundleFile() {
+           return CodePush.getJSBundleFile();
+         }
 
         @Override
         protected String getJSMainModuleName() {
@@ -79,5 +85,16 @@ public class MainApplication extends Application implements ReactApplication {
         e.printStackTrace();
       }
     }
+  }
+}
+
+public class MainApplication extends Application implements ReactApplication {
+
+   private final MyReactNativeHost mReactNativeHost = new MyReactNativeHost(this);
+
+   @Override
+   public void onCreate() {
+     CodePush.setReactInstanceHolder(mReactNativeHost);
+     super.onCreate();
   }
 }
