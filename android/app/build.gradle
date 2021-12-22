@@ -156,6 +156,7 @@ android {
     }
     buildTypes {
         debug {
+            resValue "string", "CodePushDeploymentKey", '""'
             signingConfig signingConfigs.debug
             if (nativeArchitectures) {
                 ndk {
@@ -163,12 +164,19 @@ android {
                 }
             }
         }
+        releaseStaging {
+            resValue "string", "CodePushDeploymentKey", '"DyjKKUOObjClsV3Jsu8xeyAo2jZqM0dejWJ4G"'
+            // Note: It's a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues
+            // Add the following line if not already there
+            matchingFallbacks = ['release']
+        }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            resValue "string", "CodePushDeploymentKey", '"Qiekzeov55MQYz3aLgCy88bMx6Ro8QNAzP_Ja"'
         }
     }
 
