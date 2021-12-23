@@ -1,5 +1,11 @@
 apply plugin: "com.android.application"
 
+project.ext.envConfigFiles = [
+   releaseStaging: ".env",
+]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 import com.android.build.OutputFile
 
 /**
@@ -137,6 +143,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY")
     }
     splits {
         abi {
@@ -157,6 +164,7 @@ android {
     buildTypes {
         debug {
             resValue "string", "CodePushDeploymentKey", '""'
+            matchingFallbacks = ['debug', 'release']
             signingConfig signingConfigs.debug
             if (nativeArchitectures) {
                 ndk {
@@ -165,7 +173,8 @@ android {
             }
         }
         releaseStaging {
-            resValue "string", "CodePushDeploymentKey", '"DyjKKUOObjClsV3Jsu8xeyAo2jZqM0dejWJ4G"'
+            signingConfig signingConfigs.debug
+            resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY")
             // Note: It's a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues
             // Add the following line if not already there
             matchingFallbacks = ['release']
@@ -176,9 +185,15 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            resValue "string", "CodePushDeploymentKey", '"Qiekzeov55MQYz3aLgCy88bMx6Ro8QNAzP_Ja"'
+            resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY")
         }
     }
+//     flavorDimensions "default"
+//     productFlavors {
+//         production {}
+//         staging {}
+//         development {}
+//     }
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->

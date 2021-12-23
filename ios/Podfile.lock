@@ -298,6 +298,10 @@ PODS:
   - React-jsinspector (0.66.4)
   - React-logger (0.66.4):
     - glog
+  - react-native-config (1.4.5):
+    - react-native-config/App (= 1.4.5)
+  - react-native-config/App (1.4.5):
+    - React-Core
   - react-native-safe-area-context (3.3.2):
     - React-Core
   - react-native-webview (11.15.0):
@@ -424,6 +428,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-config (from `../node_modules/react-native-config`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -508,6 +513,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-config:
+    :path: "../node_modules/react-native-config"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-webview:
@@ -584,6 +591,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 94ce921e1d8ce7023366873ec371f3441383b396
   React-jsinspector: d0374f7509d407d2264168b6d0fad0b54e300b85
   React-logger: 933f80c97c633ee8965d609876848148e3fef438
+  react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   react-native-webview: e89bf2dba26a04cda967814df3ed1be99f291233
   React-perflogger: 93075d8931c32cd1fce8a98c15d2d5ccc4d891bd
@@ -605,6 +613,6 @@ SPEC CHECKSUMS:
   Yoga: e7dc4e71caba6472ff48ad7d234389b91dadc280
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: cef308df3589540664b53c6a42aa17380087db66
+PODFILE CHECKSUM: ab78c7979ba589b90f735b56ab9269d03edef518
 
 COCOAPODS: 1.11.2
