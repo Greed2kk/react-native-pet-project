@@ -4,7 +4,7 @@ import { Button, Text, View, StyleSheet } from 'react-native';
 const HomeScreen = ({ route: { params }, navigation: { navigate } }) => {
   return (
     <View style={styles.view}>
-      <Text>2222222</Text>
+      <Text>LO</Text>
       <Text>{params ? params.text : 'Go to details, bruh!'}</Text>
       <Button
         title="click"
