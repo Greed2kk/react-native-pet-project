@@ -143,7 +143,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY")
+        resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID")
     }
     splits {
         abi {
@@ -174,7 +174,7 @@ android {
         }
         releaseStaging {
             signingConfig signingConfigs.debug
-            resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY")
+            resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID")
             // Note: It's a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues
             // Add the following line if not already there
             matchingFallbacks = ['release']
@@ -185,7 +185,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY")
+            resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID")
         }
     }
 //     flavorDimensions "default"
