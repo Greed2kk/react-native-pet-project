@@ -5,8 +5,8 @@
   "scripts": {
     "android:release": "react-native run-android --variant=release",
     "android:staging": "react-native run-android --variant=releaseStaging",
-    "ios:staging": "react-native run-ios --scheme 'AwesomeProject Staging'",
-    "ios:release": "react-native run-ios --scheme 'AwesomeProject Release'",
+    "ios:staging": "react-native run-ios --scheme 'AwesomeProject Staging' --configuration Staging",
+    "ios:release": "react-native run-ios --scheme 'AwesomeProject Release' --configuration Release",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
