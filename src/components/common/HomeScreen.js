@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Text, View, StyleSheet } from 'react-native';
+import { Button, View, StyleSheet } from 'react-native';
+import DefaultText from './DefaultText';
 
 const HomeScreen = ({ route: { params }, navigation: { navigate } }) => {
   return (
     <View style={styles.view}>
-      <Text>123123</Text>
-      <Text>{params ? params.text : 'Go to details, bruh!'}</Text>
+      <DefaultText>фывфыв</DefaultText>
+      <DefaultText>{params ? params.text : 'Go to details, bruh!'}</DefaultText>
       <Button
         title="click"
         onPress={() =>

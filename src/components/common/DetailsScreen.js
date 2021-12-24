@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Text, View, StyleSheet, TextInput } from 'react-native';
+import { Button, View, StyleSheet, TextInput } from 'react-native';
 import { Button as EButton } from 'react-native-elements';
+
+import DefaultText from './DefaultText';
 
 const HomeScreen = ({
   navigation,
@@ -12,7 +14,7 @@ const HomeScreen = ({
 
   return (
     <View style={styles.view}>
-      <Text>Welcome!🎉</Text>
+      <DefaultText>Welcome!🎉</DefaultText>
       <Button title={title} onPress={() => navigation.popToTop()} />
       <TextInput
         multiline
@@ -25,7 +27,7 @@ const HomeScreen = ({
         title="send"
         onPress={() => navigation.navigate('Home', { text })}
       />
-      <Text style={styles.title}>Update title!</Text>
+      <DefaultText style={styles.title}>Update title!</DefaultText>
       <Button
         title="Update the title"
         onPress={() => navigation.setOptions({ title: 'Updated!' })}
@@ -33,18 +35,9 @@ const HomeScreen = ({
       <EButton
         title="Add rating"
         onPress={() => navigation.navigate('RatingScreen')}
-        buttonStyle={{
-          backgroundColor: 'black',
-          borderWidth: 2,
-          borderColor: 'white',
-          borderRadius: 30,
-        }}
-        containerStyle={{
-          width: 200,
-          marginHorizontal: 50,
-          marginVertical: 10,
-        }}
-        titleStyle={{ fontWeight: 'bold' }}
+        buttonStyle={styles.buttonStyle}
+        containerStyle={styles.containerStyle}
+        titleStyle={styles.titleStyle}
       />
     </View>
   );
@@ -62,9 +55,24 @@ const styles = StyleSheet.create({
     marginTop: 100,
     padding: 10,
     backgroundColor: 'white',
+    color: '#000000',
   },
   title: {
     marginTop: 30,
+  },
+  buttonStyle: {
+    backgroundColor: 'black',
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 30,
+  },
+  containerStyle: {
+    width: 200,
+    marginHorizontal: 50,
+    marginVertical: 10,
+  },
+  titleStyle: {
+    fontWeight: 'bold',
   },
 });
 

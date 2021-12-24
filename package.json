@@ -8,6 +8,7 @@
     "ios:staging": "react-native run-ios --scheme 'AwesomeProject Staging' --configuration Staging",
     "ios:release": "react-native run-ios --scheme 'AwesomeProject Release' --configuration Release",
     "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",

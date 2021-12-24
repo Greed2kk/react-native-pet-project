@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, View, Button } from 'react-native';
 import { AirbnbRating } from 'react-native-elements';
 import { readMultiGet, saveMultiData } from '../../data/rating';
 import { DISABLE_RATING, RATING_KEY } from '../../data/storageKeys';
+import DefaultText from './DefaultText';
 
 const RatingScreen = () => {
   const [disabled, setDisabled] = useState(false);
@@ -28,7 +29,9 @@ const RatingScreen = () => {
         showRating
       />
 
-      <Text style={styles.title}>{disabled && 'Thank you for vote!'}</Text>
+      <DefaultText style={styles.title}>
+        {disabled && 'Thank you for vote!'}
+      </DefaultText>
       <Button
         title="clear rating"
         onPress={() => {
